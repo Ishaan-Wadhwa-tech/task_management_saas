@@ -13,9 +13,15 @@ export default function Signup() {
   const handleSubmit = async () => {
     try {
       await API.post("/auth/signup", data);
+      alert("Signup successful!");
       navigate("/login");
-    } catch {
-      alert("Signup failed");
+    } catch (err) {
+      if (err.response?.status === 409) {
+        alert("User already exists. Redirecting to login...");
+        navigate("/login");
+      } else {
+        alert("Signup failed");
+      }
     }
   };
 
@@ -49,6 +55,16 @@ export default function Signup() {
         >
           Signup
         </button>
+
+        <p className="mt-3 text-sm">
+          Already have an account?{" "}
+          <span
+            className="text-blue-500 cursor-pointer"
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </span>
+        </p>
       </div>
     </div>
   );

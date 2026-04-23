@@ -13,7 +13,7 @@ export default function Login() {
     try {
       const res = await API.post("/auth/login", data);
       login(res.data.token);
-      navigate("/");
+      navigate("/dashboard");
     } catch {
       alert("Login failed");
     }

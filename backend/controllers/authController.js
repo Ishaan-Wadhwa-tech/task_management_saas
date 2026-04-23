@@ -5,6 +5,12 @@ const User = require("../models/User");
 exports.signup = async (req, res) => {
   const { name, email, password } = req.body;
 
+  const existingUser = await User.findOne({ where: { email } });
+
+  if (existingUser) {
+    return res.status(409).json({ message: "User already exists" });
+  }
+
   const hashed = await bcrypt.hash(password, 10);
 
   const user = await User.create({
