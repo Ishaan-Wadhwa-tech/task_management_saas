@@ -189,7 +189,7 @@ task_manager_saas/
 # 📌 Live Demo & Links
 
 * 🔗 GitHub Repo: *(https://github.com/Ishaan-Wadhwa-tech/task_management_saas)*
-* 🌐 Live App: *(Add deployment link here)*
+* 🌐 Live App: *(https://task-management-saas-phi.vercel.app/)*
 
 ---
 
