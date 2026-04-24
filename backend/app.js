@@ -7,7 +7,7 @@ const taskRoutes = require("./routes/taskRoutes");
 const app = express();
 
 app.use(cors({
-  origin: "https://vercel.com/ishs-projects-6ad24541/task-management-saas/DQqAThM4HvRhgWuQHHWx7Pfeaqaq",
+  origin: "https://task-management-saas-phi.vercel.app",
   credentials: true,
 }));
 
